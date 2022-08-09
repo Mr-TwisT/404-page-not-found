@@ -1,0 +1,185 @@
+/* My CSS reset */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+body {
+  line-height: 1.5;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Variables */
+
+:root {
+  --color-primary: #333333;
+  --color-accent: #4f4f4f;
+  --color-footer: #bdbdbd;
+  --color-white: #fff;
+  --color-black: #000;
+
+  --ff-primary: "Space Mono", monospace;
+  --ff-header: "Inconsolata", monospace;
+  --ff-footer: "Montserrat", sans-serif;
+}
+
+/* Styles */
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__header {
+  width: 100%;
+  height: max-content;
+  padding: 40px 0 0 77px;
+}
+
+.app__header p {
+  font-family: var(--ff-header);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 110%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.app__main {
+  width: 100%;
+  max-height: 75%;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.app__image img {
+  width: 50%;
+  margin: auto;
+}
+
+.app__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.app__text h1 {
+  width: 70%;
+  font-family: var(--ff-primary);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 150%;
+  letter-spacing: -0.035em;
+  color: var(--color-primary);
+}
+
+.app__text p {
+  width: 40%;
+  font-family: var(--ff-primary);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 150%;
+  letter-spacing: -0.035em;
+  color: var(--color-accent);
+}
+
+.app__button {
+  width: 216px;
+  height: 68px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+
+  font-family: var(--ff-primary);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.app__button:hover {
+  cursor: pointer;
+  background: var(--color-accent);
+  transition: all 0.3s ease;
+}
+
+.app__footer {
+  position: absolute;
+  top: 97vh;
+  left: 0;
+  width: 100%;
+
+  text-align: center;
+  font-family: var(--ff-footer);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 150%;
+  color: var(--color-footer);
+}
+
+.app__footer-bold {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .app {
+    padding: 20px;
+  }
+
+  .app__header {
+    padding: 0;
+    margin-bottom: 64px;
+  }
+
+  .app__main {
+    flex-direction: column;
+  }
+
+  .app__image img {
+    width: 60%;
+  }
+
+  .app__text {
+    gap: 2rem;
+    margin-top: 60px;
+  }
+
+  .app__text h1 {
+    width: 100%;
+    font-size: 3rem;
+    line-height: 150%;
+  }
+
+  .app__text p {
+    width: 100%;
+    font-size: 1.125rem;
+    line-height: 150%;
+    margin-bottom: 66px;
+  }
+}
